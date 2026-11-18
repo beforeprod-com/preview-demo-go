@@ -40,73 +40,35 @@ const homePage = `<!DOCTYPE html>
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Simple Web Server Go</title>
+  <title>This is a Beforeprod preview</title>
   <style>
     * { box-sizing: border-box; margin: 0; padding: 0; }
     body {
-      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+      font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
       min-height: 100vh;
       display: flex;
-      flex-direction: column;
       align-items: center;
-      justify-content: space-between;
-      padding: 6rem 1.5rem 4rem;
+      justify-content: center;
+      padding: 6rem 1.5rem;
       background: #fafafa;
       color: #171717;
     }
-    h1 { font-size: 2.25rem; font-weight: 700; text-align: center; margin-bottom: 2rem; }
-    .hero { text-align: center; flex: 1; display: flex; align-items: center; }
-    .hero h2 { font-size: 1.5rem; font-weight: 600; margin-bottom: 1rem; }
-    .hero p { font-size: 1.125rem; color: #525252; }
-    .cards {
-      display: grid;
-      gap: 1rem;
-      width: 100%;
-      max-width: 64rem;
-      grid-template-columns: repeat(auto-fit, minmax(14rem, 1fr));
-    }
-    .card {
-      border: 1px solid transparent;
-      border-radius: 0.5rem;
-      padding: 1.25rem;
-      transition: border-color 0.15s, background 0.15s;
-    }
-    .card:hover { border-color: #d4d4d4; background: #f5f5f5; }
-    .card h3 { font-size: 1.25rem; font-weight: 600; margin-bottom: 0.75rem; }
-    .card p { font-size: 0.875rem; opacity: 0.6; max-width: 30ch; }
-    .arrow { display: inline-block; transition: transform 0.15s; }
-    .card:hover .arrow { transform: translateX(0.25rem); }
+    main { max-width: 36rem; width: 100%; text-align: center; display: flex; flex-direction: column; align-items: center; gap: 1.5rem; }
+    h1 { font-size: 2.25rem; font-weight: 700; letter-spacing: -0.025em; }
+    .badge { display: inline-block; border: 1px solid #cbd5e1; background: #e2e8f0; color: #0f172a; border-radius: 9999px; padding: 0.25rem 0.75rem; font-size: 0.875rem; font-weight: 600; }
+    h2 { font-size: 1.5rem; font-weight: 600; }
+    .lead { font-size: 1.125rem; color: #4b5563; }
+    a { color: inherit; text-decoration: underline; text-underline-offset: 4px; }
+    a:hover { color: #0f172a; }
   </style>
 </head>
 <body>
-  <header>
-    <h1>Welcome to Simple Web Server Go</h1>
-  </header>
-
-  <section class="hero">
-    <div>
-      <h2>Your Go app is running!</h2>
-      <p>This is a very simple Go HTTP web server.</p>
-    </div>
-  </section>
-
-  <section class="cards">
-    <div class="card">
-      <h3>Go <span class="arrow">&rarr;</span></h3>
-      <p>Built with the Go standard library</p>
-    </div>
-    <div class="card">
-      <h3>BeforeProd <span class="arrow">&rarr;</span></h3>
-      <p>Preview deployments on pull requests</p>
-    </div>
-    <div class="card">
-      <h3>Minimal <span class="arrow">&rarr;</span></h3>
-      <p>Single binary, no external dependencies</p>
-    </div>
-    <div class="card">
-      <h3>Simple <span class="arrow">&rarr;</span></h3>
-      <p>Clean and minimal setup</p>
-    </div>
-  </section>
+  <main>
+    <h1>This is a Beforeprod preview</h1>
+    <span class="badge">Go</span>
+    <h2>A Go app, deployed from GitHub Actions for this PR.</h2>
+    <p class="lead">Real HTTPS. Torn down when the PR closes.</p>
+    <p><a href="https://beforeprod.com">beforeprod.com</a> &middot; Early access</p>
+  </main>
 </body>
 </html>`

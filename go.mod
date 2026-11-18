@@ -1,3 +1,3 @@
-module github.com/beforeprod-com/simple-webserver-go
+module github.com/beforeprod-com/preview-demo-go
 
 go 1.24
