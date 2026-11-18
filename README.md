@@ -2,9 +2,12 @@
 
 Minimal **Go** HTTP server that shows [Beforeprod](https://beforeprod.com) preview deployments on every pull request.
 
-Open a PR → GitHub Actions builds the app → Beforeprod spins up an isolated preview → the **HTTPS preview URL is written into the PR description**. Close the PR → the preview is cleaned up.
+Open a PR, GitHub Actions builds the app, Beforeprod spins up an isolated preview, and the **HTTPS preview URL is written into the PR description**. Close the PR and the preview is cleaned up.
 
-Sibling demo (JavaScript / Next.js): [`preview-demo-js`](https://github.com/beforeprod-com/preview-demo-js)  
+Fork this repo and open a pull request to try it.
+
+Sibling demo (JavaScript / Next.js): [`preview-demo-js`](https://github.com/beforeprod-com/preview-demo-js)
+
 Action used under the hood: [`preview-deployment-action`](https://github.com/beforeprod-com/preview-deployment-action)
 
 ## Run locally
@@ -15,7 +18,7 @@ Requires Go 1.24+.
 go run .
 ```
 
-Listens on port **4522** by default (Beforeprod’s expected port). Override with `PORT`:
+Listens on port **4522** by default. Override with `PORT`:
 
 ```bash
 PORT=8080 go run .
@@ -32,7 +35,7 @@ On every pull request (`opened`, `synchronize`, `reopened`), **Build Web Server*
 
 1. Builds a Linux `amd64` binary named `app` into `./build`
 2. Deploys it to Beforeprod via `beforeprod-com/preview-deployment-action` (`platform: GO`)
-3. Updates the PR description with the preview URL
+3. Writes the preview link into the PR description
 
 When the PR is closed, **Cleanup PR Deployments** stops the preview app.
 
@@ -45,7 +48,11 @@ When the PR is closed, **Cleanup PR Deployments** stops the preview app.
 
 ### Permissions
 
-Deploy workflow needs `pull-requests: write` (so the action can update the PR body). Cleanup needs `pull-requests: read`.
+Deploy workflow needs `pull-requests: write`. Cleanup needs `pull-requests: read`.
+
+## Want this on your repo?
+
+Beforeprod is in early access. [Request access on beforeprod.com](https://beforeprod.com/?ref=demo-go)
 
 ## Learn more
 
